@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/cashRegisterFragment">
+    <fragment
+        android:id="@+id/cashRegisterFragment"
+        android:name="com.epitech.cashmanager.cashregister.CashRegisterFragment"
+        android:label="fragment_cash_register"
+        tools:layout="@layout/fragment_cash_register" >
+        <action
+            android:id="@+id/action_cashRegisterFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.epitech.cashmanager.confirmation.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" >
+        <action
+            android:id="@+id/action_confirmationFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.epitech.cashmanager.payment.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_QRCodeFragment"
+            app:destination="@id/QRCodeFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_NFCFragment"
+            app:destination="@id/NFCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.epitech.cashmanager.setting.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/QRCodeFragment"
+        android:name="com.epitech.cashmanager.qrcode.QRCodeFragment"
+        android:label="fragment_qr_code"
+        tools:layout="@layout/fragment_qr_code">
+        <action
+            android:id="@+id/action_QRCodeFragment_to_paymentAcceptedFragment"
+            app:destination="@id/paymentAcceptedFragment" />
+        <action
+            android:id="@+id/action_QRCodeFragment_to_paymentRefusedFragment"
+            app:destination="@id/paymentRefusedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentRefusedFragment"
+        android:name="com.epitech.cashmanager.paymentrefused.PaymentRefusedFragment"
+        android:label="fragment_payment_refused"
+        tools:layout="@layout/fragment_payment_refused" >
+        <action
+            android:id="@+id/action_paymentRefusedFragment_to_cashRegisterFragment"
+            app:destination="@id/cashRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentAcceptedFragment"
+        android:name="com.epitech.cashmanager.paymentaccepted.PaymentAcceptedFragment"
+        android:label="fragment_payment_accepted"
+        tools:layout="@layout/fragment_payment_accepted" >
+        <action
+            android:id="@+id/action_paymentAcceptedFragment_to_cashRegisterFragment"
+            app:destination="@id/cashRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/NFCFragment"
+        android:name="com.epitech.cashmanager.nfc.NFCFragment"
+        android:label="fragment_nfc"
+        tools:layout="@layout/fragment_nfc" >
+        <action
+            android:id="@+id/action_NFCFragment_to_paymentAcceptedFragment"
+            app:destination="@id/paymentAcceptedFragment" />
+        <action
+            android:id="@+id/action_NFCFragment_to_paymentRefusedFragment"
+            app:destination="@id/paymentRefusedFragment" />
+    </fragment>
+</navigation>

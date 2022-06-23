@@ -1,0 +1,12 @@
+com.backend
+com.backend.auth
+com.backend.bootstrap
+com.backend.config
+com.backend.controller
+com.backend.exception
+com.backend.model
+com.backend.repository
+com.backend.security
+com.backend.service
+com.backend.service.abstractions
+com.backend.service.concretions

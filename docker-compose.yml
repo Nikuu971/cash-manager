@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  db:
+    image: "postgres"
+    container_name: PostegresDB 
+    ports:
+      - "5432"
+    networks: 
+      - backend-net
+    volumes: 
+      - db-data:/var/lib/postgresql/data
+    restart: always
+  backend:  
+    container_name: API
+    build: backend
+    ports: 
+      - "8080:8080"
+    environment: 
+      - DB_HOST=db
+    depends_on: 
+      - "db"
+    networks: 
+      - backend-net
+    volumes: 
+      - "common-data:/usr/share/api"
+    restart: always  
+  frontend: 
+    container_name: AndroidAPP
+    build: frontend
+    volumes: 
+      - "common-data:/usr/share/app"
+    restart: always
+  vault: 
+    container_name: CashManagerVault
+    image: vault
+    ports:
+      - "127.0.0.1:8200:8200"
+    volumes: 
+      - ./file:/vault/file:rw
+      - ./config:/vault/config:rw
+    networks: 
+      - backend-net
+    entrypoint: vault server -config=/vault/config/vault.json
+networks:
+  backend-net:
+    driver: bridge      
+volumes: 
+  db-data:
+  common-data:
+  jenkins_home:

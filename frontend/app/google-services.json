@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223434956924",
+    "project_id": "cashmanager-efc55",
+    "storage_bucket": "cashmanager-efc55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223434956924:android:4c68fea0ef7e2162b1e9f9",
+        "android_client_info": {
+          "package_name": "com.epitech.cashmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223434956924-6f5f4oadg51v6ngi4s52gl1pa4vvia4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY5lPJWTnhwZE_UfDrRHrM7fU89hs3uzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223434956924-6f5f4oadg51v6ngi4s52gl1pa4vvia4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
